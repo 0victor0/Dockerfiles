@@ -5,3 +5,4 @@ syntax on
 set ai
 set tabstop=4
 colo delek
+set cc=80
