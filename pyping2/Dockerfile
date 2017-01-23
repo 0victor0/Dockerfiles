@@ -1,5 +1,6 @@
-FROM kalilinux/kali-linux-docker
-LABEL version="1.0" description="Dockerizing network tools"
+# FROM kalilinux/kali-linux-docker
+FROM debian:8.6
+LABEL version="2.0" description="Dockerizing network tools"
 MAINTAINER Victor Clark <victor@victorclark.org>
 
 #Link for curl-loader. Last update 2013-06-05. Subdomain may vary
@@ -12,7 +13,7 @@ RUN \
     apt-get update && \
     apt-get install -y \
     binutils \
-    build-essential \
+    # build-essential \
     bzip2 \
     curl \
     gcc \
@@ -25,12 +26,17 @@ RUN \
     net-tools \
     openssl \
     python \
+    python-dev \
+    python-pip \
     tar \
+    tcpdump \
     traceroute \
-    tmux \
-    vim \
-    zlib1g-dev
+    # tmux \
+    vim 
+    # zlib1g-dev
 #zlib1g-dev not needed on debian-bsaed build
+
+RUN pip install pandas
 
 #Download, compile, and create link for curl-loader
 WORKDIR tmp

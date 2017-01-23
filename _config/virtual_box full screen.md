@@ -8,3 +8,8 @@ In case you're running Docker in a guest on Virtualbox, Here are the commands to
         cp /media/cdrom/VBoxLinuxAdditions.run
         chmod 755 VBoxLinuxAdditions.run
         sudo ./VBoxLinuxAdditions.run
+
+#For accessing shared folders
+
+        sudo usermod -aG vboxsf <youruser>  #in the guest machine
+                                            #log out then log in
