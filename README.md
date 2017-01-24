@@ -1,10 +1,13 @@
 #Dockerfiles
 
-Repo for my Dockerfiles. Directories with arm_* are compatible with ARM
-architecture.
+Repo for my Dockerfiles. Directories with arm_\* are compatible with ARM
+architecture. Any builds at version >=1.0 can be pulled from [my Docker hub](https://hub.docker.com/r/victorclark/).
+
+*Note that any Dockerfiles with versions less than 1.0 have not been verified.*
 
 ##Config files
-Config files also included, useful for host machine setup.
+
+Config files also included, useful for VM host machine setup.
 
 ##Quick tips
 
@@ -21,9 +24,9 @@ daemon:
 
         docker run \ 
             -it \                                   #attach to STDIN
-            -h [host name] \
+            -h [host name] \                        #change prompt
             --rm \                                  #remove after exit
-            --name [container name] \
+            --name [container name] \               #persistent name if not using --rm
             --net=host \                            #useful for network analysis
             -v [host dir]:[container mount point] \ #if needed
             -p [host port]:[container port] \       #if needed
